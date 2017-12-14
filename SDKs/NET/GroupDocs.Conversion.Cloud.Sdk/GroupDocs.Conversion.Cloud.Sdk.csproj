@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{13284D1A-8B08-469A-A58B-5C94B92C68E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>GroupDocs.Conversion.Cloud.Sdk</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>9e52cd64</NuGetPackageImportStamp>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>GroupDocs.Conversion.Cloud.Sdk</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net20\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ApiException.cs" />
+    <Compile Include="Api\AuthType.cs" />
+    <Compile Include="Api\Configuration.cs" />
+    <Compile Include="Api\ConversionApi.cs" />
+    <Compile Include="Api\StorageApi.cs" />
+    <Compile Include="Internal\ApiInvoker.cs" />
+    <Compile Include="Internal\NeedRepeatRequestException.cs" />
+    <Compile Include="Internal\FileInfo.cs" />
+    <Compile Include="Internal\IRequestHandler.cs" />
+    <Compile Include="Internal\RequestHandlers\LegacyApiErrorResponse.cs" />
+    <Compile Include="Internal\RequestHandlers\ApiErrorResponse.cs" />
+    <Compile Include="Internal\RequestHandlers\ApiExceptionRequestHandler.cs" />
+    <Compile Include="Internal\RequestHandlers\AuthWithSignatureRequestHandler.cs" />
+    <Compile Include="Internal\RequestHandlers\DebugLogRequestHandler.cs" />
+    <Compile Include="Internal\RequestHandlers\Error.cs" />
+    <Compile Include="Internal\RequestHandlers\OAuthRequestHandler.cs" />
+    <Compile Include="Internal\SerializationHelper.cs" />
+    <Compile Include="Internal\StreamHelper.cs" />
+    <Compile Include="Internal\UrlHelper.cs" />
+    <Compile Include="Model\BaseConversionRequest.cs" />
+    <Compile Include="Model\CadOptionsDto.cs" />
+    <Compile Include="Model\CellsConversionSettings.cs" />
+    <Compile Include="Model\CellsSaveOptionsDto.cs" />
+    <Compile Include="Model\ConversionFileInfo.cs" />
+    <Compile Include="Model\HtmlConversionSettings.cs" />
+    <Compile Include="Model\HtmlSaveOptionsDto.cs" />
+    <Compile Include="Model\ImageConversionSettings.cs" />
+    <Compile Include="Model\ImageSaveOptionsDto.cs" />
+    <Compile Include="Model\Link.cs" />
+    <Compile Include="Model\PdfConversionSettings.cs" />
+    <Compile Include="Model\PdfOptionsDto.cs" />
+    <Compile Include="Model\PdfSaveOptionsDto.cs" />
+    <Compile Include="Model\PossibleConversionResponse.cs" />
+    <Compile Include="Model\PsdOptionsDto.cs" />
+    <Compile Include="Model\QuickConversionSettings.cs" />
+    <Compile Include="Model\Requests\ConvertToCellsRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToCellsStreamRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToHtmlRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToHtmlStreamRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToImageRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToImageStreamRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToPdfRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToPdfStreamRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToSlidesRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToSlidesStreamRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToWordsRequest.cs" />
+    <Compile Include="Model\Requests\ConvertToWordsStreamRequest.cs" />
+    <Compile Include="Model\Requests\GetAllPossibleConversionsRequest.cs" />
+    <Compile Include="Model\Requests\GetPossibleConversionsForFileTypeRequest.cs" />
+    <Compile Include="Model\Requests\PossibleConversionsForDocumentRequest.cs" />
+    <Compile Include="Model\Requests\QuickConvertRequest.cs" />
+    <Compile Include="Model\Requests\QuickConvertToStreamRequest.cs" />
+    <Compile Include="Model\Responses\FileExist.cs" />
+    <Compile Include="Model\Responses\FileExistResponse.cs" />
+    <Compile Include="Model\Responses\ResponseMessage.cs" />
+    <Compile Include="Model\SaveOptionsBaseDto.cs" />
+    <Compile Include="Model\SlidesConversionSettings.cs" />
+    <Compile Include="Model\SlidesSaveOptionsDto.cs" />
+    <Compile Include="Model\TiffOptionsDto.cs" />
+    <Compile Include="Model\WatermarkOptionsDto.cs" />
+    <Compile Include="Model\WebpOptionsDto.cs" />
+    <Compile Include="Model\WordsConversionSettings.cs" />
+    <Compile Include="Model\WordsSaveOptionsDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets" Condition="Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" />
+</Project>

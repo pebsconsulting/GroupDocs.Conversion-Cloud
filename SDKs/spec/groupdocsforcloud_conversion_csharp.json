@@ -1,0 +1,1490 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "GroupDocs.Conversion for Cloud API References",
+    "version": "17.11"
+  },
+  "host": "localhost",
+  "basePath": "/v1",
+  "schemes": [],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/conversion/cells": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns document with the result of conversion",
+        "operationId": "ConvertToCells",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CellsConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          },
+          {
+            "type": "string",
+            "name": "OutPath",
+            "in": "query",
+            "x-nullable": true,
+            "description": "outPath: path to output document on file storage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Link"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/cells/stream": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns stream of document with the result of conversion",
+        "operationId": "ConvertToCellsStream",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CellsConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "file"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/formats": {
+      "get": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Retrieves all possible conversions",
+        "operationId": "GetAllPossibleConversions",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of all possible conversions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PossibleConversionResponse"
+              }
+            },
+            "x-nullable": true
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Retrieves all possible conversions for the specified document type. Document is passed in request body",
+        "operationId": "PossibleConversionsForDocument",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of all possible conversions for specified document",
+            "schema": {
+              "$ref": "#/definitions/PossibleConversionResponse"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/{extension}/formats": {
+      "get": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Retrieves all possible conversions for the specified file type",
+        "operationId": "GetPossibleConversionsForFileType",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "Extension",
+            "in": "query",
+            "required": true,
+            "x-nullable": true,
+            "description": "File extension"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of all possible conversions for specified extension",
+            "schema": {
+              "$ref": "#/definitions/PossibleConversionResponse"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/quick": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns document with the result of conversion",
+        "operationId": "QuickConvert",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuickConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          },
+          {
+            "type": "string",
+            "name": "OutPath",
+            "in": "query",
+            "x-nullable": true,
+            "description": "outPath: path to output document on file storage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Link"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/quick/stream": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns stream of document with the result of conversion",
+        "operationId": "QuickConvertToStream",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuickConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "file"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/html": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns document with the result of conversion",
+        "operationId": "ConvertToHtml",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HtmlConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          },
+          {
+            "type": "string",
+            "name": "OutPath",
+            "in": "query",
+            "x-nullable": true,
+            "description": "outPath: path to output document on file storage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Link"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/html/stream": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns stream of document with the result of conversion",
+        "operationId": "ConvertToHtmlStream",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HtmlConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "file"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/image": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns document with the result of conversion",
+        "operationId": "ConvertToImage",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ImageConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          },
+          {
+            "type": "string",
+            "name": "OutPath",
+            "in": "query",
+            "x-nullable": true,
+            "description": "outPath: path to output document on file storage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Link"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/image/stream": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns stream of document with the result of conversion",
+        "operationId": "ConvertToImageStream",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ImageConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "file"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/pdf": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns document with the result of conversion",
+        "operationId": "ConvertToPdf",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PdfConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          },
+          {
+            "type": "string",
+            "name": "OutPath",
+            "in": "query",
+            "x-nullable": true,
+            "description": "outPath: path to output document on file storage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Link"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/pdf/stream": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns stream of document with the result of conversion",
+        "operationId": "ConvertToPdfStream",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PdfConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "file"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/slides": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns document with the result of conversion",
+        "operationId": "ConvertToSlides",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SlidesConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          },
+          {
+            "type": "string",
+            "name": "OutPath",
+            "in": "query",
+            "x-nullable": true,
+            "description": "outPath: path to output document on file storage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Link"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/slides/stream": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns stream of document with the result of conversion",
+        "operationId": "ConvertToSlidesStream",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SlidesConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "file"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/words": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns document with the result of conversion",
+        "operationId": "ConvertToWords",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/WordsConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          },
+          {
+            "type": "string",
+            "name": "OutPath",
+            "in": "query",
+            "x-nullable": true,
+            "description": "outPath: path to output document on file storage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Link"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    },
+    "/conversion/words/stream": {
+      "post": {
+        "tags": [
+          "conversion"
+        ],
+        "summary": "Returns stream of document with the result of conversion",
+        "operationId": "ConvertToWordsStream",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Settings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/WordsConversionSettings"
+            },
+            "x-nullable": true,
+            "description": "The settings."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "file"
+            },
+            "x-nullable": true
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CellsConversionSettings": {
+      "type": "null",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseConversionRequest"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Options": {
+              "description": "The settings",
+              "$ref": "#/definitions/CellsSaveOptionsDto"
+            }
+          }
+        }
+      ],
+      "description": "CellConversionRequest "
+    },
+    "CellsSaveOptionsDto": {
+      "type": "null",
+      "additionalProperties": false,
+      "required": [
+        "ConvertFileType"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaveOptionsBaseDto"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ConvertFileType": {
+              "enum": [
+                "Xls",
+                "Xlsx",
+                "Xls2003",
+                "Xlsm",
+                "Xlsb",
+                "Ods",
+                "Csv"
+              ],
+              "description": "Get or set the desired cells format "
+            },
+            "Password": {
+              "type": "string",
+              "description": "Set this property if you want to protect the converted document with a password"
+            }
+          }
+        }
+      ],
+      "description": "Cells save options"
+    },
+    "SaveOptionsBaseDto": {
+      "type": "object",
+      "discriminator": "Type",
+      "additionalProperties": false,
+      "required": [
+        "PageNumber",
+        "NumPagesToConvert",
+        "ShowGridLines",
+        "ShowHiddenSheets",
+        "HideWordTrackedChanges",
+        "HidePdfAnnotations",
+        "HideComments"
+      ],
+      "properties": {
+        "PageNumber": {
+          "type": "integer",
+          "description": "Start conversion from PageNumber page",
+          "format": "int32"
+        },
+        "NumPagesToConvert": {
+          "type": "integer",
+          "description": "Number of pages to convert",
+          "format": "int32"
+        },
+        "ConvertPages": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": "Convert specific pages. The list contains the page indexes of the pages to be converted"
+        },
+        "WatermarkOptions": {
+          "description": "Watermark specific options",
+          "$ref": "#/definitions/WatermarkOptionsDto"
+        },
+        "ShowGridLines": {
+          "type": "boolean",
+          "description": "Show grid lines when converting Excel files"
+        },
+        "ShowHiddenSheets": {
+          "type": "boolean",
+          "description": "Show hidden sheets when converting Excel files"
+        },
+        "HideWordTrackedChanges": {
+          "type": "boolean",
+          "description": "Hide markup and track changes for Word documents"
+        },
+        "CadOptions": {
+          "description": "CAD specific convert options",
+          "$ref": "#/definitions/CadOptionsDto"
+        },
+        "HidePdfAnnotations": {
+          "type": "boolean",
+          "description": "Hide annotations in Pdf documents"
+        },
+        "HideComments": {
+          "type": "boolean",
+          "description": "Hide comments during conversion if the source format support comments"
+        }
+      },
+      "description": "Base options class"
+    },
+    "WatermarkOptionsDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Width",
+        "Height",
+        "Top",
+        "Left",
+        "RotationAngle",
+        "Transparency"
+      ],
+      "properties": {
+        "Text": {
+          "type": "string",
+          "description": "Watermark text"
+        },
+        "Font": {
+          "type": "string",
+          "description": "Watermark font name"
+        },
+        "Color": {
+          "type": "string",
+          "description": "Watermark font color"
+        },
+        "Width": {
+          "type": "integer",
+          "description": "Watermark width",
+          "format": "int32"
+        },
+        "Height": {
+          "type": "integer",
+          "description": "Watermark height",
+          "format": "int32"
+        },
+        "Top": {
+          "type": "integer",
+          "description": "Watermark top position",
+          "format": "int32"
+        },
+        "Left": {
+          "type": "integer",
+          "description": "Watermark left position",
+          "format": "int32"
+        },
+        "RotationAngle": {
+          "type": "integer",
+          "description": "Watermark rotation angle",
+          "format": "int32"
+        },
+        "Transparency": {
+          "type": "number",
+          "description": "Watermark transparency. Value between 0 and 1. Value 0 is fully visible, value 1 is invisible.",
+          "format": "double"
+        }
+      },
+      "description": "Watermark options"
+    },
+    "CadOptionsDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Width",
+        "Height"
+      ],
+      "properties": {
+        "Width": {
+          "type": "integer",
+          "description": "Set desired page width for converting CAD document",
+          "format": "int32"
+        },
+        "Height": {
+          "type": "integer",
+          "description": "Set desired page height for converting CAD document",
+          "format": "int32"
+        },
+        "LayoutNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Render specific CAD layouts"
+        }
+      },
+      "description": "Cad Options"
+    },
+    "BaseConversionRequest": {
+      "type": "object",
+      "discriminator": "Type",
+      "additionalProperties": false,
+      "properties": {
+        "SourceFile": {
+          "description": "The source name",
+          "$ref": "#/definitions/ConversionFileInfo"
+        }
+      },
+      "description": "BaseConversionRequest"
+    },
+    "ConversionFileInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "folder": {
+          "type": "string",
+          "description": "The folder"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name"
+        },
+        "password": {
+          "type": "string",
+          "description": "The password"
+        }
+      },
+      "description": "ConversionFileInfo dto"
+    },
+    "Link": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "The \"href\" attribute contains the link's IRI. atom:link elements MUST\nhave an href attribute, whose value MUST be a IRI reference"
+        },
+        "rel": {
+          "type": "string",
+          "description": "atom:link elements MAY have a \"rel\" attribute that indicates the link\nrelation type.  If the \"rel\" attribute is not present, the link\nelement MUST be interpreted as if the link relation type is \"alternate\"."
+        },
+        "type": {
+          "type": "string",
+          "description": "On the link element, the \"type\" attribute's value is an advisory\nmedia type: it is a hint about the type of the representation that is\nexpected to be returned when the value of the href attribute is\ndereferenced.  Note that the type attribute does not override the\nactual media type returned with the representation."
+        },
+        "title": {
+          "type": "string",
+          "description": "The \"title\" attribute conveys human-readable information about the\nlink.  The content of the \"title\" attribute is Language-Sensitive."
+        }
+      },
+      "description": "Provides information for the object link.\nThis is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7"
+    },
+    "PossibleConversionResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "SourceFileType": {
+          "type": "string",
+          "description": "Source FileType"
+        },
+        "PossibleConversions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array with possible conversions"
+        }
+      },
+      "description": "Possible conversions response class"
+    },
+    "QuickConversionSettings": {
+      "type": "null",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseConversionRequest"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Format": {
+              "type": "string",
+              "description": "required target format"
+            }
+          }
+        }
+      ],
+      "description": "QuickConversionSettings"
+    },
+    "HtmlConversionSettings": {
+      "type": "null",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseConversionRequest"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Options": {
+              "description": "The settings",
+              "$ref": "#/definitions/HtmlSaveOptionsDto"
+            }
+          }
+        }
+      ],
+      "description": "HtmlConversionSettings"
+    },
+    "HtmlSaveOptionsDto": {
+      "type": "null",
+      "additionalProperties": false,
+      "required": [
+        "UsePdf",
+        "FixedLayout",
+        "Zoom"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaveOptionsBaseDto"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "UsePdf": {
+              "type": "boolean",
+              "description": "If true, the input firstly is converted to PDF and after that to desired format"
+            },
+            "FixedLayout": {
+              "type": "boolean",
+              "description": "If true fixed layout will be used e.g. absolutely positioned html elements\nDefault:  true"
+            },
+            "Zoom": {
+              "type": "integer",
+              "description": "Specifies the zoom level in percentage. Default is 100.",
+              "format": "int32"
+            }
+          }
+        }
+      ],
+      "description": "Html save options"
+    },
+    "ImageConversionSettings": {
+      "type": "null",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseConversionRequest"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Options": {
+              "description": "The settings",
+              "$ref": "#/definitions/ImageSaveOptionsDto"
+            }
+          }
+        }
+      ],
+      "description": "ImageConversionSettings"
+    },
+    "ImageSaveOptionsDto": {
+      "type": "null",
+      "additionalProperties": false,
+      "required": [
+        "Width",
+        "Height",
+        "UsePdf",
+        "ConvertFileType",
+        "HorizontalResolution",
+        "VerticalResolution",
+        "JpegQuality",
+        "Grayscale"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaveOptionsBaseDto"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Width": {
+              "type": "integer",
+              "description": "Desired image width after conversion",
+              "format": "int32"
+            },
+            "Height": {
+              "type": "integer",
+              "description": "Desired image height after conversion",
+              "format": "int32"
+            },
+            "UsePdf": {
+              "type": "boolean",
+              "description": "If true, the input firstly is converted to PDF and after that to desired format"
+            },
+            "ConvertFileType": {
+              "enum": [
+                "Tiff",
+                "Tif",
+                "Jpg",
+                "Jpeg",
+                "Png",
+                "Gif",
+                "Bmp",
+                "Ico",
+                "Psd",
+                "Webp",
+                "Svg"
+              ],
+              "description": "The desired file type to which the input document should be converted to"
+            },
+            "HorizontalResolution": {
+              "type": "integer",
+              "description": "Desired image horizontal resolution after conversion. The default resolution is the resolution of the input file or 96dpi",
+              "format": "int32"
+            },
+            "VerticalResolution": {
+              "type": "integer",
+              "description": "Desired image vertical resolution after conversion. The default resolution is the resolution of the input file or 96dpi",
+              "format": "int32"
+            },
+            "JpegQuality": {
+              "type": "integer",
+              "description": "Desired image quality when converting to Jpeg. The value must be between 0 and 100. The default value is 100.",
+              "format": "int32"
+            },
+            "TiffOptions": {
+              "description": "Tiff specific convert options",
+              "$ref": "#/definitions/TiffOptionsDto"
+            },
+            "PsdOptions": {
+              "description": "Psd specific convert options",
+              "$ref": "#/definitions/PsdOptionsDto"
+            },
+            "WebpOptions": {
+              "description": "Webp specific convert options",
+              "$ref": "#/definitions/WebpOptionsDto"
+            },
+            "Grayscale": {
+              "type": "boolean",
+              "description": "Convert to grayscale image"
+            }
+          }
+        }
+      ],
+      "description": "Image save options"
+    },
+    "TiffOptionsDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Compression"
+      ],
+      "properties": {
+        "Compression": {
+          "enum": [
+            "Lzw",
+            "None",
+            "Ccitt3",
+            "Ccitt4",
+            "Rle"
+          ],
+          "description": "Set Tiff compression"
+        }
+      },
+      "description": "Tiff options"
+    },
+    "PsdOptionsDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ChannelBitsCount",
+        "ChannelsCount",
+        "ColorMode",
+        "CompressionMethod",
+        "Version"
+      ],
+      "properties": {
+        "ChannelBitsCount": {
+          "type": "integer",
+          "description": "Bits count per color channel"
+        },
+        "ChannelsCount": {
+          "type": "integer",
+          "description": "Color channels count"
+        },
+        "ColorMode": {
+          "enum": [
+            "Bitmap",
+            "Grayscale",
+            "Indexed",
+            "Rgb",
+            "Cmyk",
+            "Multichannel",
+            "Duotone",
+            "Lab"
+          ],
+          "description": "Psd color mode"
+        },
+        "CompressionMethod": {
+          "enum": [
+            "Raw",
+            "Rle",
+            "ZipWithoutPrediction",
+            "ZipWithPrediction"
+          ],
+          "description": "Psd compression method"
+        },
+        "Version": {
+          "type": "integer",
+          "description": "Psd file version",
+          "format": "int32"
+        }
+      },
+      "description": "Psd options"
+    },
+    "WebpOptionsDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Lossless"
+      ],
+      "properties": {
+        "Lossless": {
+          "type": "boolean",
+          "description": "Indicates if the compression of the converted file will be lossless"
+        }
+      },
+      "description": "Webp options"
+    },
+    "PdfConversionSettings": {
+      "type": "null",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseConversionRequest"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Options": {
+              "description": "The settings",
+              "$ref": "#/definitions/PdfSaveOptionsDto"
+            }
+          }
+        }
+      ],
+      "description": "PdfConversionSettings"
+    },
+    "PdfSaveOptionsDto": {
+      "type": "null",
+      "additionalProperties": false,
+      "required": [
+        "ConvertFileType",
+        "Width",
+        "Height",
+        "Dpi",
+        "MarginTop",
+        "MarginBottom",
+        "MarginLeft",
+        "MarginRight"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaveOptionsBaseDto"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ConvertFileType": {
+              "enum": [
+                "Pdf",
+                "Epub",
+                "Xps"
+              ],
+              "description": "The desired file type to which the input document should be converted to"
+            },
+            "WordBookmarks": {
+              "type": "string",
+              "description": "If the input document is Word the conversion will handle the word bookmarks regarding this option."
+            },
+            "Width": {
+              "type": "integer",
+              "description": "Desired page width in pixels after conversion",
+              "format": "int32"
+            },
+            "Height": {
+              "type": "integer",
+              "description": "Desired page height in pixels after conversion",
+              "format": "int32"
+            },
+            "Dpi": {
+              "type": "number",
+              "description": "Desired page DPI after conversion. The default resolution is: 96dpi",
+              "format": "double"
+            },
+            "Password": {
+              "type": "string",
+              "description": "Set this property if you want to protect the converted document with a password"
+            },
+            "MarginTop": {
+              "type": "integer",
+              "description": "Desired page top margin in pixels after conversion",
+              "format": "int32"
+            },
+            "MarginBottom": {
+              "type": "integer",
+              "description": "Desired page bottom margin in pixels after conversion",
+              "format": "int32"
+            },
+            "MarginLeft": {
+              "type": "integer",
+              "description": "Desired page left margin in pixels after conversion",
+              "format": "int32"
+            },
+            "MarginRight": {
+              "type": "integer",
+              "description": "Desired page right margin in pixels after conversion",
+              "format": "int32"
+            },
+            "PdfOptions": {
+              "description": "Pdf specific convert options",
+              "$ref": "#/definitions/PdfOptionsDto"
+            }
+          }
+        }
+      ],
+      "description": "Pdf save options"
+    },
+    "PdfOptionsDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PdfFormat",
+        "RemovePdfaCompliance"
+      ],
+      "properties": {
+        "PdfFormat": {
+          "enum": [
+            "Default",
+            "PdfA_1A",
+            "PdfA_1B",
+            "PdfA_2A",
+            "PdfA_3A",
+            "PdfA_2B",
+            "PdfA_2U",
+            "PdfA_3B",
+            "PdfA_3U",
+            "v1_3",
+            "v1_4",
+            "v1_5",
+            "v1_6",
+            "v1_7",
+            "PdfX_1A",
+            "PdfX3"
+          ],
+          "description": "Set the pdf format of the converted document."
+        },
+        "RemovePdfaCompliance": {
+          "type": "boolean",
+          "description": "Remove Pdf-A Compliance"
+        }
+      },
+      "description": "Pdf options"
+    },
+    "SlidesConversionSettings": {
+      "type": "null",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseConversionRequest"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Options": {
+              "description": "The settings",
+              "$ref": "#/definitions/SlidesSaveOptionsDto"
+            }
+          }
+        }
+      ],
+      "description": "SlidesConversionSettings"
+    },
+    "SlidesSaveOptionsDto": {
+      "type": "null",
+      "additionalProperties": false,
+      "required": [
+        "ConvertFileType"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaveOptionsBaseDto"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ConvertFileType": {
+              "enum": [
+                "Ppt",
+                "Pps",
+                "Pptx",
+                "Ppsx",
+                "Odp",
+                "Otp"
+              ],
+              "description": "The desired file type to which the input document should be converted to"
+            },
+            "Password": {
+              "type": "string",
+              "description": "Set this property if you want to protect the converted document with a password"
+            }
+          }
+        }
+      ],
+      "description": "Slides save options"
+    },
+    "WordsConversionSettings": {
+      "type": "null",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseConversionRequest"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Options": {
+              "description": "The settings",
+              "$ref": "#/definitions/WordsSaveOptionsDto"
+            }
+          }
+        }
+      ],
+      "description": "WordsConversionSettings"
+    },
+    "WordsSaveOptionsDto": {
+      "type": "null",
+      "additionalProperties": false,
+      "required": [
+        "ConvertFileType",
+        "Width",
+        "Height",
+        "Dpi"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaveOptionsBaseDto"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ConvertFileType": {
+              "enum": [
+                "Doc",
+                "Docm",
+                "Docx",
+                "Dot",
+                "Dotm",
+                "Dotx",
+                "Rtf",
+                "Txt",
+                "Odt",
+                "Ott"
+              ],
+              "description": "The desired file type to which the input document should be converted to"
+            },
+            "Width": {
+              "type": "integer",
+              "description": "Desired page width after conversion",
+              "format": "int32"
+            },
+            "Height": {
+              "type": "integer",
+              "description": "Desired page height after conversion",
+              "format": "int32"
+            },
+            "Dpi": {
+              "type": "number",
+              "description": "Desired page DPI after conversion. The default resolution is: 96dpi",
+              "format": "double"
+            },
+            "Password": {
+              "type": "string",
+              "description": "Set this property if you want to protect the converted document with a password"
+            }
+          }
+        }
+      ],
+      "description": "Words save options"
+    }
+  },
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth": {
+      "type": "oauth2",
+      "flow": "application",
+      "authorizationUrl": "localhost/oauth2/token"
+    },
+    "appsid": {
+      "type": "apiKey",
+      "name": "Appsid",
+      "in": "query"
+    },
+    "signature": {
+      "type": "apiKey",
+      "name": "Signature",
+      "in": "query"
+    }
+  }
+}

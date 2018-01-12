@@ -63,5 +63,4 @@ All GroupDocs.Conversion for Cloud SDKs are licensed under [MIT License](LICENSE
 + [**Product Home**](https://products.groupdocs.cloud/conversion/cloud)
 + [**Documentation**](https://docs.groupdocs.cloud/display/conversioncloud/Home)
 + [**Free Support Forum**](https://forum.groupdocs.cloud/c/conversion)
-+ [**Paid Support Helpdesk**](https://helpdesk.groupdocs.cloud)
 + [**Blog**](https://blog.groupdocs.cloud/category/groupdocs-products/groupdocs-conversion-product-family)
